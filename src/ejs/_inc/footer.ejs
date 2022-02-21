@@ -1,0 +1,26 @@
+<% var pages = [ { pageName: 'About', pageDir: 'about' }, { pageName: 'Product',
+pageDir: 'product' }, { pageName: 'News', pageDir: 'news' }, { pageName: 'Blog',
+pageDir: 'blog' }, { pageName: 'Contact', pageDir: 'contact' } ] %>
+
+<footer class="siteFooter" role="contentinfo">
+  <div class="siteFooter__inner">
+    <h1 class="siteFooter__inner__logo">
+      <a class="siteFooter__inner__logo__link">ロゴ</a>
+    </h1>
+    <nav class="siteFooter__inner__gnav">
+      <ul class="siteFooter__inner__gnav__list" role="list">
+        <% for (var i in pages) { %>
+        <li class="siteFooter__inner__gnav__list__item" role="listitem">
+          <a
+            class="siteFooter__inner__gnav__list__item__link"
+            href="/<%- pages[i].pageDir %>/"
+            ><%- pages[i].pageName %></a
+          >
+        </li>
+        <% } %>
+      </ul>
+    </nav>
+    <div id="pagetop" class="siteFooter__inner__pagetop"><!-- ボタン --></div>
+  </div>
+</footer>
+<script src="<%= baseMeta.path %>/assets/js/bundle.js"></script>

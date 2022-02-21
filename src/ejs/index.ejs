@@ -1,0 +1,100 @@
+<% const baseMeta = { ttl: 'ページタイトル', desc: 'ディスクリプション',
+keywords: 'キーワード' , url: 'http://localhost:8080/', pageName: 'top', path:
+'.' }; %>
+
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include('./_inc/head', {baseMeta: baseMeta}); %>
+
+  <body>
+    <main role="main">
+      <%- include('./_inc/header', {baseMeta: baseMeta}); %>
+
+      <section class="pageSec">
+        <div class="pageSec__inner">
+          <h2 class="pageSec__inner__title"><%= baseMeta.pageName %></h2>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+          <p class="pageSec__inner__text">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+
+          <!-- Slider main container -->
+          <div class="container">
+            <!-- Additional required wrapper -->
+            <div class="wrapper">
+              <!-- Slides -->
+              <div class="slide">
+                <img src="./assets/image/icon.jpg" alt="" />
+              </div>
+              <div class="slide">
+                <img src="./assets/image/icon02.jpg" alt="" />
+              </div>
+              <div class="slide">
+                <img src="./assets/image/icon03.jpg" alt="" />
+              </div>
+              <div class="slide">
+                <img src="./assets/image/icon04.jpg" alt="" />
+              </div>
+              <div class="slide">
+                <img src="./assets/image/icon05.jpg" alt="" />
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="button-prev"></div>
+            <div class="button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="scrollbar"></div>
+          </div>
+        </div>
+      </section>
+
+      <%- include('./_inc/aside', {baseMeta: baseMeta}); %> <%-
+      include('./_inc/footer', {baseMeta: baseMeta}); %>
+    </main>
+  </body>
+</html>

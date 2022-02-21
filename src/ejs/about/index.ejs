@@ -1,0 +1,26 @@
+<% const baseMeta = { ttl: 'ページタイトル', desc: 'ディスクリプション',
+keywords: 'キーワード' , url: 'http://localhost:8080/', pageName: 'about',
+path:'..' }; %>
+
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include('../_inc/head', {baseMeta: baseMeta}); %>
+
+  <body>
+    <main role="main">
+      <%- include('../_inc/header', {baseMeta: baseMeta}); %>
+
+      <section class="pageSec">
+        <div class="pageSec__inner">
+          <h2 class="pageSec__inner__title"><%= baseMeta.pageName %></h2>
+          <p class="pageSec__inner__text">
+            キストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+        </div>
+      </section>
+
+      <%- include('../_inc/aside', {baseMeta: baseMeta}); %> <%-
+      include('../_inc/footer', {baseMeta: baseMeta}); %>
+    </main>
+  </body>
+</html>

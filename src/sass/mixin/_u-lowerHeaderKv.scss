@@ -1,0 +1,78 @@
+@mixin u-lowerHeaderKv {
+
+  //第二階層のheader
+  &__innerArea__titleArea {
+    text-align: center;
+    padding-top: 60px;
+    @include u-mqMax {
+  padding-top: 30px;
+    }
+  }
+
+  &__innerArea__titleArea__title {
+    @include u-articlePageTitle;
+    padding-bottom: 20px;
+    color: $blue01;
+    @include u-mqMax {
+      font-size: 24px;
+      padding-bottom: 10px;
+    }
+  }
+
+//第三階層のheader
+  &__wrapArea {
+    padding: 80px 0 80px;
+    background: radial-gradient(#9ec5f0 20%, #6bade6 60%, #328fca);
+  }
+
+  &__wrapArea__titleArea {
+    text-align: center;
+  }
+
+  &__wrapArea__titleArea__title {
+    @include u-articlePageTitle;
+    padding-bottom: 12px;
+  }
+
+  &__wrapArea__titleArea__text {
+    @include u-articleText($fzPC:1.8rem);
+    text-align: center;
+    color: $white;
+    font-weight: 400;
+  }
+
+//第四階層のheader
+  &__contArea {
+    padding: 80px 0 80px;
+    background: linear-gradient(to bottom, #c0d7eb, #d9e7f8 30%, #d9e7f8 60%, #c0d7eb);
+  }
+
+  &__contArea__titleArea {
+    text-align: center;
+  }
+
+  &__contArea__titleArea__title {
+    @include u-articlePageTitle;
+    padding-bottom: 12px;
+    color: $blue01;
+  }
+
+  &__contArea__titleArea__text {
+    @include u-articleText($fzPC:1.8rem);
+    text-align: center;
+    color: $blue01;
+    font-weight: 400;
+  }
+
+}
+
+//SP
+
+@mixin u-lowerHeaderKvSp {
+  @include u-mqMax {
+    &__innerArea {
+      padding: 80px 0 30px;
+    }
+
+  }
+}

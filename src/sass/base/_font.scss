@@ -1,0 +1,62 @@
+/*====================================================================
+base / font
+====================================================================*/
+$items: "ThaiSansNeue-Bold", "ThaiSansNeue-ExtraBold", "ThaiSansNeue-Regular",
+  "ThaiSansNeue-Black", "ThaiSansNeue-SemiBold", "ThaiSansNeue-ExtraLight",
+  "ThaiSansNeue-SemiBoldItalic", "ThaiSansNeue-Light", "ThaiSansNeue-UltraLight";
+
+@each $item in $items {
+  @font-face {
+    font-family: $item;
+    font-weight: 400;
+    src: url(/fonts/#{$item}.ttf);
+    font-display: block;
+  }
+}
+
+@font-face {
+  font-family: "Montserrat-Regular", Meiryo, sans-serif;
+  src: local("../font/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "NotoSansJP-Light";
+  src: local("../font/NotoSansJP-Light.otf");
+}
+
+@font-face {
+  font-family: "NotoSansJP-Regular";
+  src: local("../font/NotoSansJP-Regular.otf");
+}
+
+@font-face {
+  font-family: "NotoSansJP-Medium";
+  src: local("../font/NotoSansJP-Medium.otf");
+}
+
+@font-face {
+  font-family: "NotoSansJP-Thin";
+  src: local("../font/NotoSansJP-Thin.otf");
+}
+
+@mixin fontMSP {
+  font-family: "游ゴシック", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "游ゴシック  Medium", -apple-system, BlinkMacSystemFont, meiryo, sans-serif;
+}
+
+@mixin u-fontGothic {
+  font-family: "Montserrat-Regular", "游ゴシック体", YuGothic, "游ゴシック",
+    Helvetica Neue, Helvetica, Arial, "Yu Gothic", "Montserrat-Regular",
+    "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+}
+
+@mixin u-fontYuMincho {
+  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN", Meiryo, sans-serif;
+}
+
+@mixin fontNotoSans {
+  font-family: "Montserrat-Regular", "Noto Sans JP", "NotoSansJP-Regular",
+    "NotoSansJP-Medium", "游ゴシック体", YuGothic, "游ゴシック", Helvetica Neue,
+    Helvetica, Arial, "Yu Gothic", "Montserrat-Regular", "メイリオ",
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+}

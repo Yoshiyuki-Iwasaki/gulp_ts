@@ -1,0 +1,159 @@
+/*====================================================================
+COMMON LAYOUT
+====================================================================*/
+body {
+  // min-width: $contentCenter;
+  background: $white;
+  font-size: 10px;
+  color: $black;
+  @include fontSmoothing;
+  @include fontFeature;
+
+  &.js-noScroll {
+    overflow: hidden;
+  }
+
+  @include u-mqMax {
+    min-width: inherit;
+  }
+
+  main.mainContent {
+    padding-top: 190px;
+    position: relative;
+    @include u-mqMax {
+      padding-top: 124px;
+    }
+  }
+}
+
+/*-----------------------------------------------
+PC/SP 出し分け
+------------------------------------------------*/
+.u-pcDb {
+  display: block;
+}
+.u-pcDib {
+  display: inline-block;
+}
+.u-pcDin {
+  display: inline;
+}
+.u-pcDf {
+  display: flex;
+}
+.u-pcDt {
+  display: table;
+}
+.u-pcDtc {
+  display: table-cell;
+}
+
+.u-spDb,
+.u-spDib,
+.u-spDin,
+.u-spDf,
+.u-spDt,
+.u-spDtc {
+  display: none;
+}
+
+@include u-mqMax {
+  .u-pcDb,
+  .u-pcDib,
+  .u-pcDin,
+  .u-pcDf,
+  .u-pcDt,
+  .u-pcDtc {
+    display: none;
+  }
+
+  .u-spDb {
+    display: block;
+  }
+  .u-spDib {
+    display: inline-block;
+  }
+  .u-spDin {
+    display: inline;
+  }
+  .u-spDf {
+    display: flex;
+  }
+  .u-spDt {
+    display: table;
+  }
+  .u-spDtc {
+    display: table-cell;
+  }
+}
+
+/*-----------------------------------------------
+サイトコンテンツ
+------------------------------------------------*/
+$cursor-size: 8px;
+$cursor-color: #292929;
+$chaser-size: 40px;
+$chaser-color: #d1d1e0;
+$chaser-color-opacity: 0.3;
+$chaser-easing-speed: 0.3s;
+$chaser-active-color-opacity: 0.5;
+$chaser-active-magnification: 2;
+
+.cursor,
+.chaser {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.cursor {
+  width: $cursor-size;
+  height: $cursor-size;
+  background-color: $cursor-color;
+  z-index: 1001;
+  cursor: none;
+}
+
+.chaser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $chaser-size;
+  height: $chaser-size;
+  background-color: rgba($chaser-color, $chaser-color-opacity);
+  z-index: 1000;
+  transition: transform ease $chaser-easing-speed;
+  text-align: center;
+  &.hov_ {
+    background-color: rgba($chaser-color, $chaser-active-color-opacity);
+    transform: scale($chaser-active-magnification);
+  }
+}
+
+/*-----------------------------------------------
+文字フェードイン（CSSアニメーション）
+------------------------------------------------*/
+
+@keyframes mask_fadeIn {
+  0% {
+    /* x方向の倍率を0に */
+    transform: scaleX(0);
+    /* 変換の原点を(0, 0)に指定 */
+    transform-origin: 0 0;
+  }
+  45% {
+    /* x方向の倍率を初期値(1倍)に */
+    transform: none;
+    transform-origin: 0 0;
+  }
+  50% {
+    transform: none;
+    transform-origin: 100% 0;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: 100% 0;
+  }
+}

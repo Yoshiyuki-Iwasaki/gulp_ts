@@ -1,0 +1,30 @@
+<% var pages = [ { pageName: 'About', pageDir: 'about' }, { pageName: 'Product',
+pageDir: 'product' }, { pageName: 'News', pageDir: 'news' }, { pageName: 'Blog',
+pageDir: 'blog' }, { pageName: 'Contact', pageDir: 'contact' } ] %>
+
+<header class="siteHeader" role="banner">
+  <div class="siteHeader__inner">
+    <h1 class="siteHeader__inner__logo">
+      <a class="siteHeader__inner__logo__link">ロゴ</a>
+    </h1>
+    <nav id="gnav" class="siteHeader__inner__gnav" role="navigation">
+      <ul class="siteHeader__inner__gnav__list" role="list">
+        <% for (var i in pages) { %>
+        <li class="siteHeader__inner__gnav__list__item" role="listitem">
+          <a
+            class="siteHeader__inner__gnav__list__item__link"
+            href="/<%- pages[i].pageDir %>/"
+            ><%- pages[i].pageName %></a
+          >
+        </li>
+        <% } %>
+      </ul>
+    </nav>
+
+    <button id="menu-trigger" class="siteHeader__inner__trigger">
+      <span class="siteHeader__inner__trigger__item"></span>
+      <span class="siteHeader__inner__trigger__item"></span>
+      <span class="siteHeader__inner__trigger__item"></span>
+    </button>
+  </div>
+</header>

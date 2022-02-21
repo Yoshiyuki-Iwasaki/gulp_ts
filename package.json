@@ -1,0 +1,36 @@
+{
+  "name": "front-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --files='./dist/*.html, .dist/css/*.css'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@types/jquery": "^3.5.5",
+    "@types/slick-carousel": "^1.6.34",
+    "gulp-babel": "^8.0.0",
+    "gulp-ejs": "^5.1.0",
+    "gulp-rename": "^2.0.0",
+    "jquery": "^3.5.1",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^6.4.12",
+    "ts-loader": "^8.0.14",
+    "webpack": "^5.18.0",
+    "webpack-stream": "^6.1.2"
+  }
+}

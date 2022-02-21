@@ -1,0 +1,13 @@
+@mixin u-trs($time: 0.6s) {
+  @include u-mqMin {
+    transition: $time;
+  }
+}
+
+
+// SP
+@mixin u-trsSp($time: 0.6s) {
+  @include u-mqMax {
+    transition: $time;
+  }
+}

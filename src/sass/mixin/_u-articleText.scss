@@ -1,0 +1,80 @@
+@mixin u-articleText(
+  $fzPC: 1.6rem,
+  $fzSP: 1.4rem,
+  $cl: $black,
+  $lh: 1.6,
+  $lts: 0.05em,
+  $ta: justify
+) {
+  font-size: $fzPC;
+  line-height: $lh;
+  letter-spacing: $lts;
+  color: $cl;
+  text-align: $ta;
+
+  .textYellow {
+    color: $yellow;
+  }
+  .taC {
+    text-align: center;
+  }
+  .taR {
+    text-align: right;
+  }
+  .textSmall {
+    font-size: 1.2rem;
+  }
+  .textBig {
+    font-size: 3rem;
+  }
+
+  &.textYellow {
+    color: $yellow;
+  }
+  &.taC {
+    text-align: center;
+  }
+  &.taR {
+    text-align: right;
+  }
+
+  // SP
+  @include u-mqMax {
+    font-size: $fzSP;
+  }
+  @include u-mqMax($maxW: 320px) {
+    font-size: 14px;
+  }
+}
+
+@mixin u-articleTitle(
+  $fzPC: 2.4rem,
+  $fzSP: 1.8rem,
+  $lh: 1.6,
+  $lts: 0.1em,
+  $ta: justify
+) {
+  font-size: $fzPC;
+  line-height: $lh;
+  letter-spacing: $lts;
+  text-align: $ta;
+  font-weight: bold;
+  @include u-mqMax {
+    font-size: $fzSP;
+  }
+}
+
+@mixin u-articlePageTitle(
+  $fzPC: 3rem,
+  $fzSP: 2rem,
+  $lh: 1.2,
+  $lts: 0.1em,
+  $ta: center
+) {
+  font-size: $fzPC;
+  line-height: $lh;
+  letter-spacing: $lts;
+  text-align: $ta;
+  font-weight: 300;
+  color: $white;
+}

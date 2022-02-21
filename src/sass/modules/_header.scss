@@ -1,0 +1,122 @@
+/*====================================================================
+Header
+====================================================================*/
+.siteHeader {
+  &__inner {
+    padding: 15px;
+    display: flex;
+
+    @include u-mqMax {
+      justify-content: space-between;
+    }
+  }
+
+  &__inner__logo__link {
+    @include u-articleText;
+  }
+
+  &__inner__gnav {
+    margin-left: 20px;
+    @include u-mqMax {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+
+      &.js_active {
+        display: block;
+      }
+    }
+  }
+
+  &__inner__gnav__list {
+    display: flex;
+    @include u-mqMax {
+      padding: 60px 15px;
+      height: 100%;
+      flex-direction: column;
+      background: #fff;
+      border-top: 1px solid #333;
+    }
+  }
+
+  &__inner__gnav__list__item {
+    @include u-mqMax {
+      border-bottom: 1px solid #333;
+
+      &:first-child {
+        border-top: 1px solid #333;
+      }
+    }
+  }
+
+  &__inner__gnav__list__item__link {
+    margin-left: 15px;
+    display: block;
+    text-align: center;
+    @include u-articleText($ta: center);
+
+    @include u-mqMax {
+      margin-left: 0;
+      padding: 10px 0;
+      text-align: center;
+    }
+  }
+
+  &__inner__trigger,
+  &__inner__trigger__item {
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+  }
+
+  &__inner__trigger {
+    position: relative;
+    width: 40px;
+    height: 35px;
+    display: none;
+    @include u-mqMax {
+      display: block;
+    }
+
+    &.js_active {
+        .siteHeader__inner__trigger__item {
+          &:nth-of-type(1) {
+            transform: translateY(15px) rotate(-45deg);
+          }
+
+          &:nth-of-type(2) {
+            opacity: 0;
+          }
+
+          &:nth-of-type(3) {
+            transform: translateY(-15px) rotate(45deg);
+          }
+        }
+    }
+  }
+
+  &__inner__trigger__item {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 4px;
+
+    &:nth-of-type(1) {
+      top: 0;
+    }
+
+    &:nth-of-type(2) {
+      top: 15px;
+    }
+
+    &:nth-of-type(3) {
+      bottom: 0;
+    }
+  }
+}

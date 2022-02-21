@@ -1,0 +1,39 @@
+/*====================================================================
+pageSec
+====================================================================*/
+.pageSec {
+  &__inner {
+    @include u-contentCenter;
+  }
+
+  &__inner__title {
+    @include u-articleTitle;
+  }
+
+  &__inner__text {
+    margin-top: 40px;
+    @include u-articleText;
+  }
+}
+
+.slick-arrow {
+  &.prev {
+    position: absolute;
+    left: 0;
+    z-index: 111111;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  &.next {
+    position: absolute;
+    right: 0;
+    z-index: 111111;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,533 @@
+@mixin u-bntBlack {
+  width: 300px;
+  &__link {
+    display: block;
+    @include u-articleText( $fzPC: 17px, $fzSP: 14px, $lh: 1.6);
+    padding: 18px 60px 18px 50px;
+    border: 1px solid $black01;
+    text-align: center;
+    font-weight: bold;
+    @include u-trs;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 88%;
+      width: 32px;
+      height: 18px;
+      transform: translate(-50%, -50%);
+      background-image: url('../images/common/arr_black.png');
+      @include u-trs($time:0.4s);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    @include u-hover {
+      background-color: $black01;
+      color: $white;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 90%;
+        width: 32px;
+        height: 18px;
+        transform: translate(-50%, -50%);
+        background-image: url('../images/common/arr_wh.png');
+      }
+    }
+  }
+
+
+  // SP
+  @include u-mqMax {
+    &__link {
+      padding: 14px 26px;
+    }
+  }
+}
+
+
+
+
+@mixin u-bntRed {
+  width: 300px;
+  &__link {
+    display: block;
+    @include u-articleText( $fzPC: 17px, $fzSP: 14px, $lh: 1.6);
+    padding: 15px 60px 15px 50px;
+    border: 1px solid $white;
+    color: $white;
+    @include u-trs;
+    font-weight: bold;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 88%;
+      width: 32px;
+      height: 18px;
+      transform: translate(-50%, -50%);
+      background-image: url('../images/common/arr_wh.png');
+      @include u-trs($time:0.4s);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    @include u-hover {
+      background-color: $white;
+      color: $red01;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+        background-image: url('../images/common/arr_red.png');
+      }
+    }
+  }
+
+  // SP
+  @include u-mqMax {
+    &__link {
+      padding: 14px 26px;
+    }
+  }
+}
+
+
+@mixin u-bntWhite {
+  width: 300px;
+  &__link {
+    display: block;
+    @include u-articleText( $fzPC: 17px, $fzSP: 15px, $lh: 1.6);
+    padding: 15px 60px 15px 60px;
+    border: 1px solid $white;
+    color: $white;
+    font-weight: bold;
+    background-color: rgba(255, 251, 251, 0.23);
+    @include u-trs;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 88%;
+      width: 32px;
+      height: 18px;
+      transform: translate(-50%, -50%);
+      background-image: url('../images/common/arr_wh.png');
+      @include u-trs($time:0.4s);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    @include u-hover {
+      background-color: $white;
+      color: $black;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+        background-image: url('../images/common/arr_black.png');
+      }
+    }
+  }
+  // SP
+  @include u-mqMax {
+  }
+}
+
+
+@mixin u-bntOrg {
+  width: 1000px;
+  margin: 0 auto;
+
+  &__list {
+    @include u-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list__item__link {
+    display: block;
+    width: 475px;
+    text-align: center;
+    border: 1px solid $orange;
+    padding: 20px 0;
+    background-color: $white;
+    @include u-trs;
+
+    @include u-hover {
+      background-color: $orange;
+      p[class*="__title"] {
+        color: $white;
+      }
+      p[class*="__text"] {
+        color: $white;
+      }
+    }
+  }
+
+  &__list__item__link__title {
+    font-size: 22px;
+    line-height: 1.6;
+    font-weight: bold;
+    color: $orange;
+    @include fontRobotoItalic;
+    letter-spacing: 0.04em;
+    @include u-trs;
+  }
+
+  &__list__item__link__text {
+    font-size: 12px;
+    line-height: 1.6;
+    color: $blue01;
+    @include fontRobotoItalic;
+    letter-spacing: 0.05em;
+    @include u-trs;
+  }
+
+  // SP
+  @include u-mqMax {
+    width: 100%;
+    padding: 0 15px;
+    &__list {
+      flex-direction: column;
+    }
+
+    &__list__item__link {
+      width: 290px;
+      margin-bottom: 16px;
+      padding: 10px 0;
+    }
+
+    &__list__item__link__title {
+      font-size: 15px;
+    }
+
+    &__list__item__link__text {
+      font-size: 10px;
+    }
+  }
+}
+
+@mixin u-bnr02($bgColor: $black01, $bdColor: $black01, $textColor: $white, $hoverTextColor: $black01) {
+  @include u-flex($jc: center);
+  padding: 22px 15px;
+  position: relative;
+  border: 1px solid $bdColor;
+  background: $bgColor;
+  @include u-trs;
+
+  &::before {
+    @include u-trs;
+    content: '';
+    width: 0px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $textColor;
+  }
+
+  &__text {
+    @include u-trs;
+    position: relative;
+    color: $textColor;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: 0.15em;
+    text-align: center;
+
+    &:not(.outer):not(.pdf) {
+      &::after {
+        @include u-trs;
+        @include u-arrow($length: 10px, $color: $textColor);
+        position: absolute;
+        top: 50%;
+        right: -90px;
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+
+    &.outer {
+      padding-right: 30px;
+
+      &::after {
+        @include u-trs;
+        content: '';
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 18px auto;
+      }
+    }
+    &.pdf {
+      padding-right: 30px;
+
+      &::after {
+        @include u-trs;
+        content: '';
+        width: 30px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px auto;
+      }
+    }
+  }
+
+
+  // hover
+  @include u-hover {
+    &::before {
+      width: 100%;
+    }
+
+    span[class*="__text"] {
+      color: $hoverTextColor;
+
+      &:not(.outer):not(.pdf) {
+        &::after {
+          border-color: $hoverTextColor;
+        }
+      }
+    }
+  }
+
+
+  // SP
+  @include u-mqMax {
+    padding: 8px;
+
+    span[class*="__text"] {
+      font-size: 14px;
+    }
+  }
+}
+
+
+@mixin u-categoryIconBnr {
+  display: inline-block;
+  padding: 5px 16px 4px 35px;
+  background-color: $green02;
+  border: 1px solid $green02;
+  position: relative;
+  @include u-trs;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 2px;
+    left: 8px;
+    @include u-trs($time: 0.3s);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    // background-image: url('../images/common/icon_construction.png');
+    @include u-mqMax {
+      width: 16px;
+      height: 16px;
+      top: 5px;
+      left: 7px;
+    }
+  }
+
+  &.u-lifestyle {
+    background-color: $red03;
+    border: 1px solid $red03;
+    &::before {
+      width: 24px;
+      height: 24px;
+      top: 2px;
+      left: 8px;
+      background-image: url('../images/common/icon_kurashi.png');
+    }
+    @include u-mqMax {
+      &::before {
+        width: 16px;
+        height: 16px;
+        top: 6px;
+        left: 6px;
+        // background-image: url('../images/common/icon_kurashi_sp.png');
+      }
+    }
+  }
+
+  &.u-diy {
+    background-color: $green01;
+    border: 1px solid $green01;
+    &::before {
+      width: 24px;
+      height: 24px;
+      top: 2px;
+      left: 6px;
+      background-image: url('../images/common/icon_diy.png');
+    }
+    @include u-mqMax {
+      &::before {
+        width: 16px;
+        height: 16px;
+        top: 6px;
+        left: 6px;
+        // background-image: url('../images/common/icon_diy_sp.png');
+      }
+    }
+  }
+
+  &.u-house {
+    background-color: $red02;
+    border: 1px solid $red02;
+    &::before {
+      width: 24px;
+      height: 24px;
+      top: 2px;
+      left: 8px;
+      background-image: url('../images/common/icon_iezukuri.png');
+    }
+    @include u-mqMax {
+      &::before {
+        width: 16px;
+        height: 16px;
+        top: 6px;
+        left: 6px;
+        // background-image: url('../images/common/icon_iezukuri_sp.png');
+      }
+    }
+  }
+
+  &.u-storage {
+    background-color: $purple01;
+    border: 1px solid $purple01;
+    &::before {
+      width: 24px;
+      height: 24px;
+      top: 2px;
+      left: 8px;
+      background-image: url('../images/common/icon_shuno.png');
+    }
+    @include u-mqMax {
+      &::before {
+        width: 13px;
+        height: 16px;
+        top: 6px;
+        left: 6px;
+        // background-image: url('../images/common/icon_shuno_sp.png');
+      }
+    }
+  }
+
+  &.u-goods_furniture {
+    background-color: $blue02;
+    border: 1px solid $blue02;
+    &::before {
+      width: 24px;
+      height: 24px;
+      top: 2px;
+      left: 8px;
+      background-image: url('../images/common/icon_zakka.png');
+    }
+    @include u-mqMax {
+      &::before {
+        width: 16px;
+        height: 16px;
+        top: 6px;
+        left: 6px;
+        // background-image: url('../images/common/icon_zakka_sp.png');
+      }
+    }
+  }
+
+  &.u-information {
+    background-color: $yellow03;
+    border: 1px solid $yellow03;
+    &::before {
+      width: 24px;
+      height: 24px;
+      top: 2px;
+      left: 8px;
+      background-image: url('../images/common/icon_information.png');
+    }
+    @include u-mqMax {
+      &::before {
+        width: 16px;
+        height: 16px;
+        top: 6px;
+        left: 6px;
+        // background-image: url('../images/common/icon_information_sp.png');
+      }
+    }
+  }
+
+  &.u-construction {
+    background-color: $green02;
+    border: 1px solid $green02;
+    &::before {
+      width: 24px;
+      height: 24px;
+      top: 2px;
+      left: 8px;
+      background-image: url('../images/common/icon_construction.png');
+    }
+    @include u-mqMax {
+      &::before {
+        width: 16px;
+        height: 16px;
+        top: 6px;
+        left: 6px;
+      }
+    }
+  }
+
+  &.u-comehomehousing {
+    background-color: $yellow04;
+    border: 1px solid $yellow04;
+    &::before {
+      width: 24px;
+      height: 24px;
+      top: 2px;
+      left: 8px;
+      background-image: url('../images/common/icon_housing.png');
+    }
+    @include u-mqMax {
+      &::before {
+        width: 16px;
+        height: 16px;
+        top: 6px;
+        left: 6px;
+      }
+    }
+  }
+
+  &__text {
+    @include u-articleText;
+    font-size: 12px;
+    color: $white;
+    font-weight: bold;
+    @include u-trs;
+
+    @include u-mqMax {
+      font-size: 11px;
+    }
+  }
+}

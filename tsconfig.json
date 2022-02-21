@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "lib": ["es2015","DOM"],
+    "module": "ES6",
+    "outDir": "dist",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2015",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+  },
+  "include": [
+    "src"
+  ]
+}

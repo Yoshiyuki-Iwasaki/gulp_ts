@@ -16,9 +16,9 @@ export function slickFunction() {
       {
         breakpoint: 768, //767px以下のサイズに適用
         settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
+          slidesToShow: 2
+        }
+      }
+    ]
   });
 }

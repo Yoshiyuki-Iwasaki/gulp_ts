@@ -1,5 +1,5 @@
 @mixin u-arrow($length: 7px, $thickness: 1px, $color: $black01) {
-  content: '';
+  content: "";
   width: $length;
   height: $length;
   display: block;
@@ -7,14 +7,13 @@
   border-bottom: $thickness solid $color;
 }
 
-
 @mixin u-arrowBlack {
-  content: '';
+  content: "";
   position: absolute;
   width: 40px;
   height: 40px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url('../images/common/blackbtn.png');
+  background-image: url("../images/common/blackbtn.png");
 }

@@ -1,7 +1,7 @@
-@mixin u-footerIcon($top:5px,$left:120px) {
+@mixin u-footerIcon($top: 5px, $left: 120px) {
   position: relative;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 11px;
     height: 9px;
@@ -10,6 +10,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: url('../images/common/footer_icon.png');
+    background-image: url("../images/common/footer_icon.png");
   }
 }

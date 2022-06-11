@@ -1,9 +1,9 @@
 /*====================================================================
 base / font
 ====================================================================*/
-$items: "ThaiSansNeue-Bold", "ThaiSansNeue-ExtraBold", "ThaiSansNeue-Regular",
-  "ThaiSansNeue-Black", "ThaiSansNeue-SemiBold", "ThaiSansNeue-ExtraLight",
-  "ThaiSansNeue-SemiBoldItalic", "ThaiSansNeue-Light", "ThaiSansNeue-UltraLight";
+$items: "ThaiSansNeue-Bold", "ThaiSansNeue-ExtraBold", "ThaiSansNeue-Regular", "ThaiSansNeue-Black",
+  "ThaiSansNeue-SemiBold", "ThaiSansNeue-ExtraLight", "ThaiSansNeue-SemiBoldItalic", "ThaiSansNeue-Light",
+  "ThaiSansNeue-UltraLight";
 
 @each $item in $items {
   @font-face {
@@ -40,14 +40,13 @@ $items: "ThaiSansNeue-Bold", "ThaiSansNeue-ExtraBold", "ThaiSansNeue-Regular",
 }
 
 @mixin fontMSP {
-  font-family: "游ゴシック", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
-    "游ゴシック  Medium", -apple-system, BlinkMacSystemFont, meiryo, sans-serif;
+  font-family: "游ゴシック", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "游ゴシック  Medium", -apple-system,
+    BlinkMacSystemFont, meiryo, sans-serif;
 }
 
 @mixin u-fontGothic {
-  font-family: "Montserrat-Regular", "游ゴシック体", YuGothic, "游ゴシック",
-    Helvetica Neue, Helvetica, Arial, "Yu Gothic", "Montserrat-Regular",
-    "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-family: "Montserrat-Regular", "游ゴシック体", YuGothic, "游ゴシック", Helvetica Neue, Helvetica, Arial,
+    "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
 
 @mixin u-fontYuMincho {
@@ -55,8 +54,7 @@ $items: "ThaiSansNeue-Bold", "ThaiSansNeue-ExtraBold", "ThaiSansNeue-Regular",
 }
 
 @mixin fontNotoSans {
-  font-family: "Montserrat-Regular", "Noto Sans JP", "NotoSansJP-Regular",
-    "NotoSansJP-Medium", "游ゴシック体", YuGothic, "游ゴシック", Helvetica Neue,
-    Helvetica, Arial, "Yu Gothic", "Montserrat-Regular", "メイリオ",
-    "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-family: "Montserrat-Regular", "Noto Sans JP", "NotoSansJP-Regular", "NotoSansJP-Medium", "游ゴシック体", YuGothic,
+    "游ゴシック", Helvetica Neue, Helvetica, Arial, "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", sans-serif;
 }

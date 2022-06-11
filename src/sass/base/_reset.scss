@@ -75,10 +75,8 @@ td {
   border: 0;
   outline: 0;
   font-size: 10px;
-  font-family: "Montserrat-Regular", YuGothic, "Yu Gothic Medium", "Yu Gothic",
-    "Noto Sans JP", "NotoSansJP-Regular", "NotoSansJP-Medium", -apple-system,
-    BlinkMacSystemFont, "Helvetica Neue", HelveticaNeue, Verdana, Meiryo,
-    sans-serif;
+  font-family: "Montserrat-Regular", YuGothic, "Yu Gothic Medium", "Yu Gothic", "Noto Sans JP", "NotoSansJP-Regular",
+    "NotoSansJP-Medium", -apple-system, BlinkMacSystemFont, "Helvetica Neue", HelveticaNeue, Verdana, Meiryo, sans-serif;
   line-height: 100%;
   vertical-align: baseline;
   background: transparent;
@@ -157,10 +155,9 @@ td {
     border: 0;
     outline: 0;
     font-size: 10px;
-    font-family: "Montserrat-Regular", "Noto Sans JP", "NotoSansJP-Regular",
-      "NotoSansJP-Medium", "Montserrat-Regular", YuGothic, "Yu Gothic Medium",
-      "Yu Gothic", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-      HelveticaNeue, Verdana, Meiryo, sans-serif;
+    font-family: "Montserrat-Regular", "Noto Sans JP", "NotoSansJP-Regular", "NotoSansJP-Medium", YuGothic,
+      "Yu Gothic Medium", "Yu Gothic", -apple-system, BlinkMacSystemFont, "Helvetica Neue", HelveticaNeue, Verdana,
+      Meiryo, sans-serif;
     line-height: 100%;
     vertical-align: baseline;
     background: transparent;
@@ -239,25 +236,13 @@ input,
 textarea,
 select {
   font-family: inherit;
-  font-size: inherit;
   font-weight: inherit;
-}
-
-// to enable resizing for IE
-input,
-textarea,
-select {
-  *font-size: 100%;
+  font-size: 100%;
 }
 
 // because legend doesn't inherit in IE
 legend {
   color: $black;
-}
-
-ol,
-ul {
-  list-style: none;
 }
 
 a {

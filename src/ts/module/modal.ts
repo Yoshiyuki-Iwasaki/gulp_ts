@@ -1,6 +1,6 @@
 export function modalFunction() {
   //複数ボタンとモーダルが必要な場合
-  document.querySelectorAll("[data-modal-open]").forEach(elem => {
+  document.querySelectorAll("[data-modal-open]").forEach((elem) => {
     // 開閉する対象の要素を取得する
     const targetModalId = <string>elem.getAttribute("data-modal-open");
     const modal = <HTMLElement>document.getElementById(targetModalId);

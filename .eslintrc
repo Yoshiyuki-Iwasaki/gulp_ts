@@ -1,8 +1,22 @@
 {
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "prettier"],
+    "root": true,
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "node": true
+    },
+    // "ignorePatterns": [".stylelintrc"],
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 8,
+        "ecmaFeatures": {
+        "jsx": true
+        }
+    },
+    "globals": {
+        "window": false,
+        "alert": false
     },
     "rules": {
         "arrow-body-style": "error",
@@ -15,7 +29,6 @@
         "no-useless-rename": "error",
         "no-var": "error",
         "object-shorthand": "error",
-        "prefer-arrow-callback": "error",
         "prefer-const": "error",
         "prefer-rest-params": "error",
         "prefer-spread": "error",

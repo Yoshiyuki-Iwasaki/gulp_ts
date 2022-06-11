@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server --files='./dist/*.html, .dist/css/*.css'"
+    "start": "browser-sync start --server --files='./dist/*.html, .dist/css/*.css'",
+    "format": "prettier --write \"**/*.+(ts|scss)\"",
+    "stylelint": "npx stylelint '**/*.scss' --fix"
   },
   "keywords": [],
   "author": "",

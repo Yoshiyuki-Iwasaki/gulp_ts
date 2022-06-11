@@ -109,6 +109,7 @@ const watchFiles = () => {
   watch(CONF.IMAGE.SOURCE, series(imageFunc));
   watch(CONF.LIB.SOURCE, series(LibFunc));
   watch(CONF.TS.SOURCE, series(bundleTs));
+  watch(CONF.BROWSERSYNC.DOCUMENT_ROOT, series(browserReload));
 };
 
 exports.default = series(series(compileEjs, compileSass, LibFunc, imageFunc, bundleTs, buildServer, watchFiles));

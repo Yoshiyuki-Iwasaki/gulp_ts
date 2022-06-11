@@ -80,7 +80,6 @@ const compileSass = (done) => {
       // cssフォルダー以下に保存
       .pipe(dest(CONF.SASS.OUTPUT))
   );
-  done(); // 終了宣言
 };
 
 const bundleTs = () => {

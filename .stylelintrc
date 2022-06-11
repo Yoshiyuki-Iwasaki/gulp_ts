@@ -1,10 +1,9 @@
 {
-  "extends": "stylelint-config-standard",
+  "plugins": ["stylelint-scss", "stylelint-prettier"],
+  "extends": ["stylelint-config-recommended-scss", "stylelint-config-prettier","stylelint-prettier/recommended"],
   "rules":
     {
       "at-rule-no-unknown": null,
-      "block-no-empty": true,
-      "no-duplicate-selectors": null,
-      "number-leading-zero": "always",
+      "scss/at-rule-no-unknown": true
     }
 }

@@ -1,46 +1,46 @@
-const { src, dest, watch, series, parallel } = require('gulp');
-ejs = require('gulp-ejs');
-rename = require('gulp-rename');
-sass = require('gulp-sass');
-typescript = require('gulp-typescript');
-babel = require('gulp-babel');
-browserSync = require('browser-sync');
-webpack = require('webpack');
-webpackStream = require('webpack-stream'); // gulpでwebpackを使うために必要なプラグイン
+const { src, dest, watch, series, parallel } = require("gulp");
+ejs = require("gulp-ejs");
+rename = require("gulp-rename");
+sass = require("gulp-sass");
+typescript = require("gulp-typescript");
+babel = require("gulp-babel");
+browserSync = require("browser-sync");
+webpack = require("webpack");
+webpackStream = require("webpack-stream"); // gulpでwebpackを使うために必要なプラグイン
 // webpackの設定ファイルの読み込み
-webpackConfig = require('./webpack.config.js');
+webpackConfig = require("./webpack.config.js");
 
 //ディレクトリ構成
 const CONF = {
   EJS: {
-    SOURCE: ['./src/ejs/**/*.ejs', '!./src/ejs/_inc/*.ejs'],
-    OUTPUT: './dist',
+    SOURCE: ["./src/ejs/**/*.ejs", "!./src/ejs/_inc/*.ejs"],
+    OUTPUT: "./dist"
   },
   SASS: {
-    SOURCE: './src/sass/*.scss',
-    OUTPUT: './dist/assets/css',
+    SOURCE: "./src/sass/*.scss",
+    OUTPUT: "./dist/assets/css"
   },
   TS: {
-    SOURCE: './src/ts/*.ts',
-    OUTPUT: './dist/assets/js',
+    SOURCE: "./src/ts/*.ts",
+    OUTPUT: "./dist/assets/js"
   },
   IMAGE: {
-    SOURCE: './src/image/*',
-    OUTPUT: './dist/assets/image',
+    SOURCE: "./src/image/*",
+    OUTPUT: "./dist/assets/image"
   },
   LIB: {
-    SOURCE: ['./src/js/lib/*.js', './src/js/lib/*.css'],
-    OUTPUT: './dist/assets/js/lib',
+    SOURCE: ["./src/js/lib/*.js", "./src/js/lib/*.css"],
+    OUTPUT: "./dist/assets/js/lib"
   },
   BROWSERSYNC: {
-    DOCUMENT_ROOT: './dist',
-    INDEX: 'index.html',
+    DOCUMENT_ROOT: "./dist",
+    INDEX: "index.html",
     GHOSTMODE: {
       clicks: false,
       forms: false,
-      scroll: false,
-    },
-  },
+      scroll: false
+    }
+  }
 };
 
 // サーバー起動
@@ -49,10 +49,10 @@ const buildServer = (done) => {
     port: 8080,
     server: {
       baseDir: CONF.BROWSERSYNC.DOCUMENT_ROOT,
-      index: CONF.BROWSERSYNC.INDEX,
+      index: CONF.BROWSERSYNC.INDEX
     },
-    startPath: '',
-    reloadOnRestart: true,
+    startPath: "",
+    reloadOnRestart: true
   });
   done();
 };
@@ -65,8 +65,8 @@ const browserReload = (done) => {
 
 const compileEjs = () => {
   return src(CONF.EJS.SOURCE)
-    .pipe(ejs({}, {}, { ext: '.html' }))
-    .pipe(rename({ extname: '.html' }))
+    .pipe(ejs({}, {}, { ext: ".html" }))
+    .pipe(rename({ extname: ".html" }))
     .pipe(dest(CONF.EJS.OUTPUT));
 };
 
@@ -88,7 +88,7 @@ const bundleTs = () => {
     .pipe(eslint()) //(＊3)
     .pipe(eslint.format()) //(＊4)
     .pipe(eslint.failAfterError()) //(＊5)
-    .pipe(typescript({ target: 'ES6' }))
+    .pipe(typescript({ target: "ES6" }))
     .pipe(webpackStream(webpackConfig, webpack))
     .pipe(dest(CONF.TS.OUTPUT));
 };
@@ -112,14 +112,4 @@ const watchFiles = () => {
   watch(CONF.TS.SOURCE, series(bundleTs));
 };
 
-exports.default = series(
-  series(
-    compileEjs,
-    compileSass,
-    LibFunc,
-    imageFunc,
-    bundleTs,
-    buildServer,
-    watchFiles
-  )
-);
+exports.default = series(series(compileEjs, compileSass, LibFunc, imageFunc, bundleTs, buildServer, watchFiles));

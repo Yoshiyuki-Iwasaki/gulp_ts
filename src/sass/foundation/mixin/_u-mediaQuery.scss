@@ -1,3 +1,5 @@
+@use "foundation/variable" as *;
+
 @mixin u-mqMin($minW: $windowPC) {
   @media screen and (min-width: $minW) {
     @content;

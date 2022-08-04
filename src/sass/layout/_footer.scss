@@ -1,3 +1,6 @@
+@use "foundation/mixin/u-trs" as *;
+@use "foundation/mixin/u-hover" as *;
+
 /*====================================================================
 siteFooter
 ====================================================================*/
@@ -5,10 +8,6 @@ siteFooter
   &__inner {
     padding: 15px 0;
     display: flex;
-  }
-
-  &__inner__logo__link {
-    @include u-articleText;
   }
 
   &__inner__gnav {
@@ -21,7 +20,6 @@ siteFooter
 
   &__inner__gnav__list__item__link {
     margin-left: 15px;
-    @include u-articleText;
   }
 
   &__inner__pagetop {

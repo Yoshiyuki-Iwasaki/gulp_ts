@@ -1,3 +1,6 @@
+@use "foundation/variable" as *;
+@use "foundation/mixin/u-mediaQuery" as *;
+
 @mixin u-contentCenter($widthPC: $contentCenter, $paddingLR-PC: 15px, $paddingLR-SP: 15px) {
   max-width: $widthPC;
   margin-left: auto;

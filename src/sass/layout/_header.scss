@@ -1,3 +1,5 @@
+@use "foundation/mixin/u-mediaQuery" as *;
+
 /*====================================================================
 Header
 ====================================================================*/
@@ -33,10 +35,6 @@ Header
     &:nth-of-type(3) {
       bottom: 0;
     }
-  }
-
-  &__inner__logo__link {
-    @include u-articleText;
   }
 
   &__inner__gnav {
@@ -81,7 +79,6 @@ Header
     margin-left: 15px;
     display: block;
     text-align: center;
-    @include u-articleText($ta: center);
 
     @include u-mqMax {
       margin-left: 0;

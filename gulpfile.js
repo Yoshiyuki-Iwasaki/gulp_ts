@@ -1,7 +1,12 @@
 const { src, dest, watch, series, parallel } = require("gulp");
 ejs = require("gulp-ejs");
 rename = require("gulp-rename");
-sass = require("gulp-sass");
+sass = require("gulp-dart-sass");
+notify = require("gulp-notify"); // エラー通知
+plumber = require("gulp-plumber"); // エラー時のタスク停止防止
+autoprefixer = require("gulp-autoprefixer"); // ベンダープレフィックス付与
+sourcemaps = require("gulp-sourcemaps"); // ソースマップ出力
+debug = require("gulp-debug"); // ログ表示
 typescript = require("gulp-typescript");
 babel = require("gulp-babel");
 browserSync = require("browser-sync");
@@ -75,18 +80,33 @@ const compileSass = (done) => {
   // style.scssファイルを取得
   return (
     src(CONF.SASS.SOURCE)
+      .pipe(
+        plumber({
+          errorHandler: notify.onError("Error: <%= error.message %>")
+        })
+      )
+      .pipe(sourcemaps.init())
       // Sassのコンパイルを実行
-      .pipe(sass())
+      .pipe(
+        sass({
+          includePaths: ["src/sass"],
+          outputStyle: "expanded"
+        })
+      )
+      .pipe(
+        autoprefixer({
+          cascade: true
+        })
+      )
+      .pipe(sourcemaps.write("/maps"))
       // cssフォルダー以下に保存
       .pipe(dest(CONF.SASS.OUTPUT))
+      .pipe(debug({ title: "scss dest:" }))
   );
 };
 
 const bundleTs = () => {
   return src(CONF.TS.SOURCE)
-    .pipe(eslint()) //(＊3)
-    .pipe(eslint.format()) //(＊4)
-    .pipe(eslint.failAfterError()) //(＊5)
     .pipe(typescript({ target: "ES6" }))
     .pipe(webpackStream(webpackConfig, webpack))
     .pipe(dest(CONF.TS.OUTPUT));

@@ -7,20 +7,20 @@ module.exports = {
   // 実行時にブラウザが自動的に localhost を開く
   devServer: {
     contentBase: "dist",
-    open: true, // 自動的にブラウザが立ち上がる
+    open: true // 自動的にブラウザが立ち上がる
   },
 
   // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: [`./src/ts/index.ts`, `./src/js/index.js`],
+  entry: [`./src/ts/index.ts`],
 
   // babel
   module: {
     rules: [
       {
         test: /\.ts$/,
-        use: "ts-loader",
-      },
-    ],
+        use: "ts-loader"
+      }
+    ]
   },
   // import 文で .ts ファイルを解決するため
   // これを定義しないと import 文で拡張子を書く必要が生まれる。
@@ -28,11 +28,11 @@ module.exports = {
   // 記載したほうがトラブルに巻き込まれにくい。
   resolve: {
     // 拡張子を配列で指定
-    extensions: [".ts", ".js"],
+    extensions: [".ts", ".js"]
   },
   // ファイルの出力設定
   output: {
     // 出力ファイル名
-    filename: "bundle.js",
-  },
+    filename: "bundle.js"
+  }
 };

@@ -1,18 +1,11 @@
+@use "foundation/mixin/u-contentCenter" as *;
+
 /*====================================================================
 pageSec
 ====================================================================*/
 .pageSec {
   &__inner {
     @include u-contentCenter;
-  }
-
-  &__inner__title {
-    @include u-articleTitle;
-  }
-
-  &__inner__text {
-    margin-top: 40px;
-    @include u-articleText;
   }
 }
 

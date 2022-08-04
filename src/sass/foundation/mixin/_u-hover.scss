@@ -1,0 +1,25 @@
+@use "foundation/mixin/u-mediaQuery" as *;
+
+@mixin u-hoverOp($opacity: 0.6) {
+  @include u-mqMin {
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+}
+
+@mixin u-hoverTextColor($color: $blue01) {
+  @include u-mqMin {
+    &:hover {
+      color: $color;
+    }
+  }
+}
+
+@mixin u-hover {
+  @include u-mqMin {
+    &:hover {
+      @content;
+    }
+  }
+}

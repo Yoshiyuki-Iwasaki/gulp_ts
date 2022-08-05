@@ -30,7 +30,7 @@ const CONF = {
     OUTPUT: "./dist/assets/js"
   },
   IMAGE: {
-    SOURCE: "./src/image/*",
+    SOURCE: "./src/image/**",
     OUTPUT: "./dist/assets/image"
   },
   LIB: {

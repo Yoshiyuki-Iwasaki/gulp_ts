@@ -1,6 +1,5 @@
-<% const baseMeta = { ttl: 'ページタイトル', desc: 'ディスクリプション',
-keywords: 'キーワード' , url: 'http://localhost:8080/', pageName: 'about',
-path:'..' }; %>
+<% const baseMeta = { ttl: 'ページタイトル', desc: 'ディスクリプション', keywords: 'キーワード' , url:
+'http://localhost:8080/', pageName: 'about', path:'..' }; %>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -12,15 +11,14 @@ path:'..' }; %>
 
       <section class="pageSec">
         <div class="pageSec__inner">
-          <h2 class="pageSec__inner__title"><%= baseMeta.pageName %></h2>
-          <p class="pageSec__inner__text">
+          <h2 class="pageSec__Ttl"><%= baseMeta.pageName %></h2>
+          <p class="pageSec__txt">
             キストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
           </p>
         </div>
       </section>
 
-      <%- include('../_inc/aside', {baseMeta: baseMeta}); %> <%-
-      include('../_inc/footer', {baseMeta: baseMeta}); %>
+      <%- include('../_inc/footer', {baseMeta: baseMeta}); %>
     </main>
   </body>
 </html>

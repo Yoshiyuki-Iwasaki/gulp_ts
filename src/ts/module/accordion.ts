@@ -1,4 +1,4 @@
-export function acccordion() {
+export function accordion() {
   const data_bth_open: NodeListOf<Element> = document.querySelectorAll("[data-bth-open]");
   data_bth_open.forEach((elem) => {
     // タブを選択

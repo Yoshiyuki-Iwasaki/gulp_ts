@@ -13,5 +13,11 @@ npm install
 ```
 npx gulp
 ```
+```
+npx gulp --production
+```
+```
+npx gulp watch
+```
 
 ## ディレクトリ構造

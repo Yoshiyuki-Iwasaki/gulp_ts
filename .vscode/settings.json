@@ -13,5 +13,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "stylelint.configFile": ".stylelintrc",
-    "prettier.configPath": ".prettierrc"
+    "prettier.configPath": ".prettierrc",
+    "nuxt.isNuxtApp": false
 }
